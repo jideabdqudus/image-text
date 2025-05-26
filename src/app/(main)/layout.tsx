@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { siteName } from "@/config";
 import { generateMetadata } from "@/src/lib/utils";
+import { GoogleTagManager } from "@/src/components/google-tag-manager";
 
 export const metadata = generateMetadata({
   title: siteName,
@@ -9,5 +10,10 @@ export const metadata = generateMetadata({
 });
 
 export default function MainLayout({ children }: { children: ReactNode }) {
-  return <div>{children}</div>;
+  return (
+    <>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ""} />
+      <div>{children}</div>
+    </>
+  );
 }
