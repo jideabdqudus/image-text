@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
       <p>
         Built by{" "}
         <a
-          href="https://www.linkedin.com/in/jideabdqudus/"
+          href="https://abdulqudus.com"
           className="underline"
           target="_blank"
         >
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
         </a>{" "}
         &{" "}
         <a href="https://www.llama.com/" className="underline" target="_blank">
-          Llama 3.3
+          Llama 4
         </a>
         .
       </p>
