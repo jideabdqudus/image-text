@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       );
     }
     const res = await together.chat.completions.create({
-      model: "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
       messages: [
         {
           role: "system",
