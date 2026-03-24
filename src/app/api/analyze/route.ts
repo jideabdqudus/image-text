@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   if (!process.env.TOGETHER_API_KEY) {
     return NextResponse.json(
       { error: "Together AI API key not configured" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -18,11 +18,11 @@ export async function POST(request: Request) {
     if (!image) {
       return NextResponse.json(
         { error: "Missing image data" },
-        { status: 400 }
+        { status: 400 },
       );
     }
     const res = await together.chat.completions.create({
-      model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      model: "moonshotai/Kimi-K2.5",
       messages: [
         {
           role: "system",
@@ -54,8 +54,9 @@ export async function POST(request: Request) {
         },
       ],
       stream: false,
-      max_tokens: 300,
-      temperature: 1,
+      max_tokens: 6000,
+      temperature: 0.7,
+      top_p: 0.9,
     });
     const extractedText = res?.choices?.[0]?.message?.content;
 
@@ -68,7 +69,7 @@ export async function POST(request: Request) {
         error: "Failed to process image",
         details: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
