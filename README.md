@@ -63,7 +63,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 
 - **Frontend**: Next.js, React, TailwindCSS, Framer Motion
 - **API**: Next.js API routes
-- **AI**: Together AI (Llama 3.3)
+- **AI**: Together AI
 - **UI Components**: Shadcn UI
 
 ## 🔒 Privacy
