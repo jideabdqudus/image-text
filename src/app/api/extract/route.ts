@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       );
     }
     const res = await together.chat.completions.create({
-      model: "moonshotai/Kimi-K2.5",
+      model: "moonshotai/Kimi-K2.6",
       messages: [
         {
           role: "system",
